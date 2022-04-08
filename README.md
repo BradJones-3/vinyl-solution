@@ -2,10 +2,8 @@
 # Table of Contents
 1. [Introduction](#Introduction)
 2. [UX](#UX)
-   * [Ideal User Demographic](#Ideal-User-Demographic)
    *  [User Stories](#User-Stories)
    *  [Development Planes](#Development-Planes)
-   * [Design](#Design)
 3. [Features](#Features)
    * [Existing Features](#Existing-Features)
    * [Features to Implement in the future](#Features-to-Implement-in-the-future)
@@ -14,7 +12,6 @@
 6. [Testing](#Testing)
    * [Testing.md](TESTING.md)
 7. [Deployment](#Deployment)
-   * [Deploying on GitHub Pages](#Deploying-on-GitHub-Pages)
 8. [Credits](#Credits)
    * [Content](#Content)
 9. [Acknowledgements](#Acknowledgements)
@@ -23,13 +20,19 @@
 
 # UX
 
-## Ideal User Demographic
-
 ## User Stories
 
-**Developer Goals**
-
 **User Goals**
+  * I want to have a rough idea of what this website is when i first land on the homepage.
+  * I want to be able to easily navigate around the website.
+  * I want to be able to register an account.
+  * I want to be able to see more information about the products.
+
+**How This Will Be Achieved**
+  * A brief description when landing on the hompage.
+  * A simple navigation bar located at the top of the page.
+  * Using the navigation bar to 'Sign Up'.
+  * Clicking on the product will show a description of that product.
 
 ## Development Planes
 
@@ -37,19 +40,8 @@
 
 The developer used [Balsamiq](https://balsamiq.com/wireframes/ "Balsamiq Homepage") to create the wireframes for the website.
 
-### Home Page
-
-### Log In
-
-### Log Out
-
-### Users Profile
-
-### Add Product
-
-### Contact Us
-
-## Design
+### Wireframe Images
+[Wireframe images](wireframes.md)
 
 ### Colour Scheme
 
