@@ -55,6 +55,8 @@ The developer used [Balsamiq](https://balsamiq.com/wireframes/ "Balsamiq Homepag
 
 ### Typography
 
+The font used for this website was Quicksand which was found via Google fonts which can be found here [GoogleFonts](https://fonts.google.com/specimen/Quicksand "Link to the font used throughout the website")
+
 ## Features
 
 ### Existing Features
