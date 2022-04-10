@@ -20,6 +20,12 @@
 
 # UX
 
+## When using this website, please note that the Stripe functionality is set up to be in a test mode. DO NOT ENTER your personal card number when checking out an order. Please use these test numbers instead:
+
+    - card number: 4242 4242 4242 4242 
+    - date: 04 24
+    - CVV: 424
+
 ## User Stories
 
 **User Goals**
