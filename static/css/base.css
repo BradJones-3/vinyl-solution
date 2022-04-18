@@ -1,0 +1,77 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: url(/media/homepage-img.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    color: #F39C12;
+    font-family: 'Quicksand';
+    text-transform: uppercase;
+}
+
+/* Taken from code institute tutorials which was taken from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+
+}
+
+.logo-font {
+    text-transform: uppercase;
+}
+
+.main-logo-link {
+    width: fit-content;
+}
+
+/* Buttons/Borders */
+.shopping-button {
+    background: black;
+    color: #F39C12;
+    min-width: 260px;
+}
+
+.btn-black {
+    background: black;
+    color: #F39C12;
+}
+
+.shopping-button:hover,
+.shopping-button:active,
+.shopping-button:focus,
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background: black;
+    color: #F39C12;
+}
+
+.text-black {
+    color: black !important;
+}
+
+.border-black {
+    border: 1px solid black !important;
+}
+
+/* Media Queries */
+
+/* taken from code institute to fix the navbar to top on medium and up screens */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
+}
