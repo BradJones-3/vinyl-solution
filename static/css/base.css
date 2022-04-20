@@ -11,6 +11,10 @@ body {
     text-transform: uppercase;
 }
 
+.bg-custom {
+   background-color: #F39C12;
+}
+
 /* Taken from code institute tutorials which was taken from Bulma */
 .icon {
     align-items: center;
