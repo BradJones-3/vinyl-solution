@@ -15,6 +15,14 @@ body {
    background-color: #F39C12;
 }
 
+input.form-control {
+    background-color: #F39C12;
+    color: black;
+    border: 3px solid black !important;
+}
+
+
+
 /* Taken from code institute tutorials which was taken from Bulma */
 .icon {
     align-items: center;
@@ -29,6 +37,11 @@ body {
     text-transform: uppercase;
 }
 
+::placeholder {
+    color: #000000;
+    font-weight: bolder;
+}
+
 .main-logo-link {
     width: fit-content;
 }
@@ -38,6 +51,7 @@ body {
     background: black;
     color: #F39C12;
     min-width: 260px;
+    border: 2px solid #F39C12;
 }
 
 .btn-black {
