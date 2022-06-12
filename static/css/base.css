@@ -15,6 +15,11 @@ body {
    background-color: #F39C12;
 }
 
+.del-bg-custom {
+    background-color: #000000;
+    color: #F39C12;
+}
+
 .card-body {
     background-color: #F39C12;
     color: #000000;
@@ -105,5 +110,16 @@ input.form-control {
 
     .header-container {
         padding-top: 164px;
+    }
+}
+
+/* E 015 Django E commerce Products App Product Data to fix bug when viewing on medium screens */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 116px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
     }
 }
