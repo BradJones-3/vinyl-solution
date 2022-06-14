@@ -15,8 +15,9 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                 <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item">By Artist</a>
-                <a href="" class="dropdown-item">All Vinyl's</a>
+                <a href="{% url 'products' %}?category=the_beatles" class="dropdown-item">The Beatles</a>
+                <a href="{% url 'products' %}?category=david_bowie" class="dropdown-item">David Bowie</a>
+                <a href="{% url 'products' %}?category=the_beatles,david_bowie" class="dropdown-item">All Vinyl's</a>
             </div>
         </li>
 
@@ -26,9 +27,10 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="merch-link">
                 <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item">Jumpers &amp; Hoodies</a>
-                <a href="" class="dropdown-item">Homeware</a>
-                <a href="" class="dropdown-item">All Merch</a>
+                <a href="{% url 'products' %}?category=clothing" class="dropdown-item">Clothing</a>
+                <a href="{% url 'products' %}?category=homeware" class="dropdown-item">Homeware</a>
+                <a href="{% url 'products' %}?category=accessories" class="dropdown-item">Accessories</a>
+                <a href="{% url 'products' %}?category=clothing,homeware,accessories" class="dropdown-item">All Merch</a>
             </div>
         </li>
     </ul>
