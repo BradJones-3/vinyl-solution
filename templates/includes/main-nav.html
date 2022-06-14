@@ -4,8 +4,10 @@
             <a href="" class="logo-font font-weight-bold nav-link text-black mr-5" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Products
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+            <div class="dropdown-menu border-0 bg-custom font-weight-bold" aria-labelledby="all-products-link">
+                <a href="{% url 'products' %}" class="dropdown-item font-weight-bold">All Products</a>
+                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item dropdown font-weight-bold">By Price</a>
+                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item dropdown font-weight-bold">By Category</a>
             </div>
         </li>
 
@@ -13,11 +15,10 @@
             <a href="" class="logo-font font-weight-bold nav-link text-black mr-5" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Vinyl's
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="{% url 'products' %}?category=the_beatles" class="dropdown-item">The Beatles</a>
-                <a href="{% url 'products' %}?category=david_bowie" class="dropdown-item">David Bowie</a>
-                <a href="{% url 'products' %}?category=the_beatles,david_bowie" class="dropdown-item">All Vinyl's</a>
+            <div class="dropdown-menu border-0 bg-custom" aria-labelledby="all-products-link">
+                <a href="{% url 'products' %}?category=the_beatles" class="dropdown-item font-weight-bold">The Beatles</a>
+                <a href="{% url 'products' %}?category=david_bowie" class="dropdown-item font-weight-bold">David Bowie</a>
+                <a href="{% url 'products' %}?category=the_beatles,david_bowie" class="dropdown-item font-weight-bold">All Vinyl's</a>
             </div>
         </li>
 
@@ -25,12 +26,11 @@
             <a href="" class="logo-font font-weight-bold nav-link text-black mr-5" id="merch-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Merchandise
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="merch-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="{% url 'products' %}?category=clothing" class="dropdown-item">Clothing</a>
-                <a href="{% url 'products' %}?category=homeware" class="dropdown-item">Homeware</a>
-                <a href="{% url 'products' %}?category=accessories" class="dropdown-item">Accessories</a>
-                <a href="{% url 'products' %}?category=clothing,homeware,accessories" class="dropdown-item">All Merch</a>
+            <div class="dropdown-menu border-0 bg-custom" aria-labelledby="merch-link">
+                <a href="{% url 'products' %}?category=clothing" class="dropdown-item font-weight-bold">Clothing</a>
+                <a href="{% url 'products' %}?category=homeware" class="dropdown-item font-weight-bold">Homeware</a>
+                <a href="{% url 'products' %}?category=accessories" class="dropdown-item font-weight-bold">Accessories</a>
+                <a href="{% url 'products' %}?category=clothing,homeware,accessories" class="dropdown-item font-weight-bold">All Merch</a>
             </div>
         </li>
     </ul>

@@ -53,7 +53,6 @@ input.form-control {
     justify-content: center;
     height: 1.5rem;
     width: 1.5rem;
-
 }
 
 .logo-font {
@@ -100,6 +99,16 @@ input.form-control {
     border: 1px solid black !important;
 }
 
+.dropdown-item:hover {
+    background-color: #000000;
+    color: #F39C12;
+}
+
+.dropdown-item:focus {
+    background-color: #F39C12;
+    color: #000000;
+
+}
 /* Media Queries */
 
 /* taken from code institute to fix the navbar to top on medium and up screens */
