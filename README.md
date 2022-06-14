@@ -59,9 +59,13 @@ The font used for this website was Quicksand which was found via Google fonts wh
 
 ### Existing Features
 
+* Back to top button was taken from https://mdbootstrap.com/snippets/standard/mdbootstrap/2964350#css-tab-view.
+
 ### Future Features
 
 ## Issues And Bugs
+
+Developer had an issue with their SSD meaning all content for the website was wiped resulting in having to downsize and sacrificing some features in order to meet the deadline date.
 
 ## Technologies Used
 
@@ -112,5 +116,3 @@ For the testing section please refer to [TESTING.md](TESTING.md) file.
 9. In "Manual Deployment" click "Deploy Branch".
 10. You should get the message "Your app is successfully deployed".
 11. Click "View" to lunch the app.
-
-## Credits
