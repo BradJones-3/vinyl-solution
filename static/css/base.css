@@ -116,6 +116,10 @@ span.badge:hover {
     color: #F39C12;
 }
 
+.custom-icon {
+    color: #f39C12;
+}
+
 .shopping-button:hover,
 .shopping-button:active,
 .shopping-button:focus,
@@ -142,7 +146,6 @@ span.badge:hover {
 .dropdown-item:focus {
     background-color: #F39C12;
     color: #000000;
-
 }
 /* Media Queries */
 
