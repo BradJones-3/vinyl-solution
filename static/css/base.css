@@ -105,19 +105,24 @@ span.badge:hover {
 
 /* Buttons/Borders */
 .shopping-button {
-    background: black;
-    color: #F39C12;
-    min-width: 260px;
-    border: 2px solid #F39C12;
+    background: #000000;
+    color: #f39C12;
+    font-size: medium;
+    font-weight: bold;
 }
 
 .btn-black {
     background: black;
     color: #F39C12;
+    border: 2px solid #F39C12;
 }
 
 .custom-icon {
     color: #f39C12;
+}
+
+.custom-icon:hover {
+    color: #000000;
 }
 
 .shopping-button:hover,
@@ -126,8 +131,10 @@ span.badge:hover {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: black;
-    color: #F39C12;
+    background: #f39C12;
+    color: #000000;
+    font-size: medium;
+    border: 1px solid #000000;
 }
 
 .text-black {
