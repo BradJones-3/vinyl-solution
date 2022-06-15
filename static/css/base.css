@@ -44,10 +44,26 @@ body {
     color: #000000;
 }
 
-input.form-control {
+input.form-control,
+input.form-control:focus {
     background-color: #F39C12;
     color: black;
+    font-weight: bold;
     border: 3px solid black !important;
+}
+
+.size-select,
+.size-select:focus,
+.size-select:active{
+    background-color: #F39C12;
+    color: #000000;
+    font-weight: bold;
+    border: 3px solid black !important;
+}
+
+option.size-select:hover {
+    background-color: #000000 !important;
+    color: #F39C12 !important;
 }
 
 .overlay {
@@ -125,6 +141,14 @@ span.badge:hover {
     color: #000000;
 }
 
+.bag-icon {
+    color: #000000;
+}
+
+.bag-icon:hover {
+    color: #f39C12;
+}
+
 .shopping-button:hover,
 .shopping-button:active,
 .shopping-button:focus,
@@ -143,6 +167,13 @@ span.badge:hover {
 
 .border-black {
     border: 1px solid black !important;
+}
+
+.dropdown:hover,
+.dropdown:active,
+.dropdown:focus {
+    background-color: #000000;
+    color: #F39C12 !important;
 }
 
 .dropdown-item:hover {

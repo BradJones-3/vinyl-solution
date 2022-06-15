@@ -39,6 +39,7 @@
                                 </td>
                                 <td class="py-3 table-text font-weight-bold">
                                     <p class="my-0">{{ item.product.name }}</p>
+                                    <p class="my-0">Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
                                     <p class="my-0 small table-text-muted">SKU: {{ item.product.sku|upper }}</p>
                                 </td>
                                 <td class="py-3 table-text font-weight-bold">
@@ -48,7 +49,7 @@
                                     <p class="my-0">{{ item.quantity }}</p>
                                 </td>
                                 <td class="py-3 table-text">
-                                    <p class="my-0">{{ total }}</p>
+                                    <p class="my-0">{{ item.price }}</p>
                                 </td>
                             </tr>
                             {% endfor %}

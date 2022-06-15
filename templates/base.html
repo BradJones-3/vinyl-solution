@@ -58,8 +58,8 @@
         </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
               <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-                <li class="list-inline-item dropdown">
-                  <a class="text-black nav-link" href="" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <li class="list-inline-item">
+                  <a class="text-black nav-link dropdown" href="" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="text-center">
                       <div><i class="fas fa-user fa-lg"></i></div>
                       <p class="my-0 font-weight-bold">My Account</p>
@@ -79,10 +79,10 @@
                   </div>
                 </li>
                 <li class="list-inline-item">
-                  <a href="{% url 'view_bag' %}" class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link">
-                    <div class="text-center">
+                  <a href="{% url 'view_bag' %}" class="{% if grand_total %}text-black nav-link dropdown{% else %}text-black nav-link dropdown{% endif %} text-black nav-link dropdown">
+                    <div class=" text-center">
                       <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                      <p class="my-0 font-weight-bold">
+                      <p class="my-0 font-weight-bold dropdown">
                         {% if grand_total %}
                           £{{ grand_total|floatformat:2 }}
                         {% else %}
