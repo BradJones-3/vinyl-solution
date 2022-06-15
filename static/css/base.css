@@ -11,6 +11,11 @@ body {
     text-transform: uppercase;
 }
 
+.del-bg-custom {
+    background-color: #000000;
+    color: #F39C12;
+}
+
 .bg-custom {
    background-color: #F39C12;
 }
@@ -24,6 +29,16 @@ body {
     background-color: #F39C12;
 }
 
+.nav-link {
+    color: #000000 !important;
+    background-color: #F39C12;
+}
+
+.nav-link:hover {
+    color: #F39C12 !important;
+    background-color: #000000;
+}
+
 #btn-back-to-top {
     position: fixed;
     bottom: 20px;
@@ -34,10 +49,7 @@ body {
     color: #000000;
 }
 
-.del-bg-custom {
-    background-color: #000000;
-    color: #F39C12;
-}
+
 
 .card-body {
     background-color: #F39C12;
