@@ -154,6 +154,15 @@ span.badge:hover {
     background-color: #F39C12;
     color: #000000;
 }
+
+.table-text {
+    color: #F39C12;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.table-text-muted {
+    color: rgba(243, 156, 18, 0.6);
+}
 /* Media Queries */
 
 /* taken from code institute to fix the navbar to top on medium and up screens */
