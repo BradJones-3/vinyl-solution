@@ -11,6 +11,16 @@ body {
     text-transform: uppercase;
 }
 
+.logo-font {
+    text-transform: uppercase;
+}
+
+.main-logo-link
+
+.logo {
+    color: #000000;
+}
+
 .del-bg-custom {
     background-color: #000000;
     color: #F39C12;
@@ -48,8 +58,6 @@ body {
     border-color: #000000;
     color: #000000;
 }
-
-
 
 .card-body {
     background-color: #F39C12;
@@ -118,10 +126,6 @@ span.badge:hover {
     width: 1.5rem;
 }
 
-.logo-font {
-    text-transform: uppercase;
-}
-
 ::placeholder {
     color: #000000;
     font-weight: bolder;
@@ -129,6 +133,12 @@ span.badge:hover {
 
 .main-logo-link {
     width: fit-content;
+    color: #000000;
+}
+
+.main-logo-link:hover {
+    color: #F39C12;
+    background-color: #000000;
 }
 
 /* Buttons/Borders */
