@@ -51,6 +51,8 @@ The developer used [Balsamiq](https://balsamiq.com/wireframes/ "Balsamiq Homepag
 
 ### Colour Scheme
 
+The colour scheme I chose for this webiste was a bright orange theme with black text. This was to ensure the text stood out, when hovering over any links or icons the colours would invert to a orange text/icon and a black background to show the user that they have selected that specific item.
+
 ### Typography
 
 The font used for this website was Quicksand which was found via Google fonts which can be found here [GoogleFonts](https://fonts.google.com/specimen/Quicksand "Link to the font used throughout the website")
@@ -60,12 +62,21 @@ The font used for this website was Quicksand which was found via Google fonts wh
 ### Existing Features
 
 * Back to top button was taken from https://mdbootstrap.com/snippets/standard/mdbootstrap/2964350#css-tab-view.
+* Users can easily access any page of the website via the easy to use navigational system.
+* The webiste is fully responible and can be used on multiple devices
+* Users are able to eaily see what they have in their bags by navigating to the bag icon.
 
 ### Future Features
 
+* The ability to be able to give customers the chance to pre-order vinyls coming out at a later date.
+* Implement a calander based system to show any upcoming shows in the area from any musicians.
+* A blog system to keep customers upto date with days like 'World Record Shop Day'
+
 ## Issues And Bugs
 
-Developer had an issue with their SSD meaning all content for the website was wiped resulting in having to downsize and sacrificing some features in order to meet the deadline date.
+* Developer had an issue with their SSD meaning all content for the website was wiped resulting in having to downsize and sacrificing some features in order to meet the deadline date.
+* Delevoper also had issues when changing certain nav links colour due to them being used on multiple elements across the website.
+* Developer also had to reimplement all the products to the admin page.
 
 ## Technologies Used
 
