@@ -1,8 +1,6 @@
 <script type="text/javascript">
 
-    // Disable +/- buttons outside 1-99 range
-    function handleEnableDisable(itemId) {
-        var currentValue = parseInt($(`#id_qty_${itemId}`).val())};
+
     /* 
     * Disable +/- buttons outside 1-10 range.
     * If no size is passed to the function, the parameter will have a value of undefined by default,
@@ -53,15 +51,15 @@
        var size = $(this).data('size');
        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
        if (size) {
-          var allQuantityInputs = $(`.input-group-${itemId} input[data-size='${size}']`);
+           var allQuantityInputs = $(`.input-group-${itemId} input[data-size='${size}']`);
        } else {
-          var allQuantityInputs = $(`.input-group-${itemId} input[name='quantity']`);
+           var allQuantityInputs = $(`.input-group-${itemId} input[name='quantity']`);
        }
        var currentValue = parseInt($(closestInput).val());
        $(closestInput).val(currentValue + 1);
        var itemId = $(this).data('item_id');
        handleEnableDisable(itemId);
-       $(allQuantityInputs).val(currentValue + 1);
+       $(allQuantityInputs).val(currentValue + 1); // Could be making both fields increase at the same time
        handleEnableDisable(itemId, size);
     });
 
@@ -80,7 +78,7 @@
        $(closestInput).val(currentValue - 1);
        var itemId = $(this).data('item_id');
        handleEnableDisable(itemId);
-       $(allQuantityInputs).val(currentValue - 1);
+       $(allQuantityInputs).val(currentValue - 1); // could be making both fields decrease at the same time
        handleEnableDisable(itemId, size);
     });
 </script>
