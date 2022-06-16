@@ -95,6 +95,8 @@ The font used for this website was Quicksand which was found via Google fonts wh
    * GitHub was used to store the project after pushing.
  * [Balsamiq](https://balsamiq.com/ "Link to Balsamiq Homepage")
    * Balsamiq was used to create the wireframes during the designing stages of the project.
+ * [DiffChecker](https://www.diffchecker.com/ "Link to DiffChecker website")
+   * Diffchecker was used when comparing text from the Boutique Ado Walkthrough project to when an error occured.
 
 ### Testing.md
 
