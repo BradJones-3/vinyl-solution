@@ -91,7 +91,7 @@ option.size-select:hover {
     top: 0;
     left: 0;
     position: fixed;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.1);
     z-index: -1;
 }
 
@@ -146,6 +146,24 @@ span.badge:hover {
     color: #f39C12;
     font-size: medium;
     font-weight: bold;
+}
+
+.update-btn {
+    color: #F39C12;
+}
+
+.update-btn:hover {
+    color: #000000;
+    background-color: #F39C12;
+}
+
+.delete-btn {
+    color: #F39C12 ;
+}
+
+.delete-btn:hover {
+    color: #000000;
+    background-color: #F39C12;
 }
 
 .btn-black {
@@ -217,7 +235,7 @@ span.badge:hover {
 
 .table-text {
     color: #F39C12;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .table-text-muted {
