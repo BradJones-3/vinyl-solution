@@ -15,7 +15,6 @@ body {
     text-transform: uppercase;
 }
 
-.main-logo-link
 
 .logo {
     color: #000000;
@@ -157,6 +156,14 @@ span.badge:hover {
 
 .custom-icon {
     color: #f39C12;
+}
+
+.minus-icon {
+    color: #F39C12;
+}
+
+.minus-icon:hover {
+    color: #000000;
 }
 
 .custom-icon:hover {
