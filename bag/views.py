@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, HttpResponse
 
 # Create your views here.
 
@@ -35,6 +35,7 @@ def add_to_bag(request, item_id):
     request.session['bag'] = bag
     return redirect(redirect_url)
 
+
 def adjust_bag(request, item_id):
     """ Allows users to change item quantity inside the bag view"""
 
@@ -49,6 +50,8 @@ def adjust_bag(request, item_id):
             bag[item_id]['items_by_size'][size] = quantity
         else:
             del bag[item_id]['items_by_size'][size]
+            if not bag[item_id]['items_by_size']:
+                bag.pop()
     else:
         if quantity > 0:
             bag[item_id] = quantity
@@ -57,26 +60,26 @@ def adjust_bag(request, item_id):
 
     request.session['bag'] = bag
     return redirect(reverse('view_bag'))
+
 
 def remove_from_bag(request, item_id):
-    """ Allows users to change item quantity inside the bag view"""
+    """ Allows users to remove items from their bag"""
 
-    quantity = int(request.POST.get('quantity'))
-    size = None
-    if 'product_size' in request.POST:
-        size = request.POST['product_size']
-    bag = request.session.get('bag', {})
+    try:
+        size = None
+        if 'product_size' in request.POST:
+            size = request.POST['product_size']
+        bag = request.session.get('bag', {})
 
-    if size:
-        if quantity > 0:
-            bag[item_id]['items_by_size'][size] = quantity
-        else:
+        if size:
             del bag[item_id]['items_by_size'][size]
-    else:
-        if quantity > 0:
-            bag[item_id] = quantity
+            if not bag[item_id]['items_by_size']:
+                bag.pop()
         else:
             bag.pop(item_id)
 
-    request.session['bag'] = bag
-    return redirect(reverse('view_bag'))
+        request.session['bag'] = bag
+        return HttpResponse(status=200)
+
+    except Exception as e:
+        return HttpResponse(status=500)

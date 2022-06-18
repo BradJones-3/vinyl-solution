@@ -1,6 +1,5 @@
 <script type="text/javascript">
 
-
     /* 
     * Disable +/- buttons outside 1-10 range.
     * If no size is passed to the function, the parameter will have a value of undefined by default,
@@ -59,7 +58,7 @@
        $(closestInput).val(currentValue + 1);
        var itemId = $(this).data('item_id');
        handleEnableDisable(itemId);
-       $(allQuantityInputs).val(currentValue + 1); // Could be making both fields increase at the same time
+       $(allQuantityInputs).val(currentValue + 1);
        handleEnableDisable(itemId, size);
     });
 
@@ -78,7 +77,7 @@
        $(closestInput).val(currentValue - 1);
        var itemId = $(this).data('item_id');
        handleEnableDisable(itemId);
-       $(allQuantityInputs).val(currentValue - 1); // could be making both fields decrease at the same time
+       $(allQuantityInputs).val(currentValue - 1);
        handleEnableDisable(itemId, size);
     });
 </script>
