@@ -50,21 +50,21 @@
                                     <form class="form update-form" action="{% url 'adjust_bag' item.item_id %}" method="POST">
                                         {% csrf_token %}
                                         <div class="form-group">
-                                            <div class="input-group">
                                                 <div class="input-group input-group-{{ item.item_id }}">
                                                 <div class="input-group-prepend ml-3">
-                                                    <button class="decrement-qty shopping-button btn-sm btn rounded-0 decrement-qty_{{ item.item_id }}" data-item_id="{{ item.item_id }}">
+                                                    <button class="decrement-qty shopping-button btn-sm btn rounded-0 decrement-qty_{{ item.item_id }} {% if item.size %}decrement-size_{{ item.item_id }}_{{ item.size }}{% endif %}" 
+                                                    data-item_id="{{ item.item_id }}" data-product_size="{{ item.size }}" data-item_id="{{ item.item_id }}">
                                                         <span>
                                                             <i class="fa fa-minus-circle fa-sm" aria-hidden="true"></i>
                                                         </span>
                                                     </button>
                                                 </div>
-                                                <input class="form-control qty_input id_qty_{{ item.item_id }}" type="number"
+                                                <input class="form-control qty_input id_qty_{{ item.item_id }} {% if item.size %}size_{{ item.item_id }}_{{ item.size }}{% endif %}" type="number"
                                                     name="quantity" value="{{ item.quantity }}" min="1" max="10"
                                                     data-item_id="{{ item.item_id }}">
                                                     <div class="input-group-append">
-                                                        <button class="increment-qty shopping-button btn-sm btn rounded-0 increment-qty_{{ item.item_id }}"
-                                                            data-item_id="{{ item.item_id }}">
+                                                        <button class="increment-qty shopping-button btn-sm btn rounded-0 increment-qty_{{ item.item_id }} {% if item.size %}increment-size_{{ item.item_id }}_{{ item.size }}{% endif %}"
+                                                            data-item_id="{{ item.item_id }}" data-product_size="{{ item.size }}">
                                                             <span>
                                                                 <i class="fa fa-plus-circle fa-sm" aria-hidden="true"></i>
                                                             </span>
@@ -145,13 +145,13 @@
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
         var size = $(this).data('product_size');
-        var url = `/bag/remove/${itemId}`;
+        var url = `/bag/remove/${itemId}/`;
         var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
 
         $.post(url, data)
-        .done(function() {
-            location.reload();
-        });
+         .done(function() {
+             location.reload();
+         });
     })
 </script>
 {% endblock %}
