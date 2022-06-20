@@ -118,11 +118,11 @@
         {% for message in messages %}
           {% with message.level as level %}
             {% if level == 40 %}
-              {% include 'products/includes/toasts/toast_error.html' %}
+              {% include 'includes/toasts/toast-error.html' %}
             {% elif level == 30 %}
             {% elif level == 25 %}
-              {% include 'products/includes/toasts/toast_success.html' %}
-          {% else %}
+              {% include 'includes/toasts/toast_success.html' %}
+          {% endif %}
           {% endwith %}
         {% endfor %}
       </div>

@@ -248,6 +248,11 @@ span.badge:hover {
 .table-text-muted {
     color: rgba(243, 156, 18, 0.6);
 }
+
+.toast-text {
+    color: #F39C12;
+    background: #000000;
+}
 /* Media Queries */
 
 /* taken from code institute to fix the navbar to top on medium and up screens */
