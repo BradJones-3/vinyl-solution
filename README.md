@@ -47,7 +47,7 @@
 The developer used [Balsamiq](https://balsamiq.com/wireframes/ "Balsamiq Homepage") to create the wireframes for the website.
 
 ### Wireframe Images
-[Wireframe images](wireframes.md)
+[Wireframe images](WIREFRAMES.md)
 
 ### Colour Scheme
 
