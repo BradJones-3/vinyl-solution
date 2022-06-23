@@ -1,0 +1,30 @@
+.checkout-logo-font {
+    font-weight: bold;
+    color: #F39C12;
+    text-align: center;
+}
+
+.checkout-button {
+    background-color: #F39C12;
+    color: #000000;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.checkout-button:hover, 
+.checkout-button:active,
+.checkout-button:focus {
+    background-color: #000000;
+    color: #F39C12;
+    font-size: medium;
+    border: 1px solid #000000;
+}
+
+.payment-form {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.payment-text {
+    color: #F39C12;
+    font-weight: bold;
+}

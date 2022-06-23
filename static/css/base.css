@@ -279,7 +279,7 @@ span.badge:hover {
 }
 
 .arrow-success {
-    color: #28a745 !important;
+    border-bottom-color: #28a745 !important;
 }
 
 .arrow-danger {
