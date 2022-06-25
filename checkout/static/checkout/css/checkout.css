@@ -1,3 +1,31 @@
+.StripeElement,
+.stripe-style-input {
+  box-sizing: border-box;
+  height: 40px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 0px;
+  background-color: #F39C12;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus,
+.stripe-style-input:focus,
+.stripe-style-input:active {
+  box-shadow: 0 1px 3px 0 #F39C12;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #F39C12 !important;
+  color: #000000 !important;
+}
+
+.stripe-style-input::placeholder {
+    color: #777;
+}
+
 .checkout-logo-font {
     font-weight: bold;
     color: #F39C12;
@@ -15,9 +43,9 @@
 .checkout-button:active,
 .checkout-button:focus {
     background-color: #000000;
-    color: #F39C12;
+    color: #F39C12 !important;
     font-size: medium;
-    border: 1px solid #000000;
+    text-decoration: none;
 }
 
 .payment-form {
