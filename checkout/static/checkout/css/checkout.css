@@ -14,7 +14,7 @@
 .StripeElement--focus,
 .stripe-style-input:focus,
 .stripe-style-input:active {
-  box-shadow: 0 1px 3px 0 #F39C12;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
 }
 
 .StripeElement--webkit-autofill {
@@ -62,4 +62,8 @@
     color: #777;
     border-color: #000000;
     font-weight: bold;
+}
+
+.shopping-icon {
+    color: #000000 !important;
 }
