@@ -28,3 +28,10 @@
     color: #F39C12;
     font-weight: bold;
 }
+
+#id_country {
+    background-color: #F39C12;
+    color: #777;
+    border-color: #000000;
+    font-weight: bold;
+}
