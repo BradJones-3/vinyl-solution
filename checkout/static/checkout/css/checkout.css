@@ -48,6 +48,11 @@
     text-decoration: none;
 }
 
+.checkout-text {
+    color: #F39C12;
+    background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
 .payment-form {
     background-color: rgba(0, 0, 0, 0.6);
 }
