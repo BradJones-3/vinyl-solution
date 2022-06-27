@@ -26,10 +26,14 @@
     color: #777;
 }
 
+.break {
+    border: 1px solid white;
+}
+
 .checkout-logo-font {
     font-weight: bold;
     color: #F39C12;
-    text-align: center;
+    text-align: left;
 }
 
 .checkout-button {
@@ -71,4 +75,17 @@
 
 .shopping-icon {
     color: #000000 !important;
+}
+
+.order-confirmation-wrapper {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.order-confirmation-text {
+    font-size: small;
+    color: #F39C12;
+}
+
+.order-text {
+    color: white;
 }
