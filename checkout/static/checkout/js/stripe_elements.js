@@ -13,13 +13,11 @@ var elements = stripe.elements();
 var style = {
     base: {
         color: '#000',
-        iconColor: '#000',
-        fontFamily: '"Quicksand", sans-serif',
+        fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
         fontSmoothing: 'antialiased',
         fontSize: '16px',
         '::placeholder': {
-            color: '#000',
-            iconColor: '#000',
+            color: '#aab7c4'
         }
     },
     invalid: {
@@ -30,13 +28,13 @@ var style = {
 var card = elements.create('card', {style: style});
 card.mount('#card-element');
 
-// Handles validation errors on the card element in realtime
+// Handle realtime validation errors on the card element
 card.addEventListener('change', function (event) {
     var errorDiv = document.getElementById('card-errors');
     if (event.error) {
         var html = `
             <span class="icon" role="alert">
-                <i class=" fa fa-times"></i>
+                <i class="fas fa-times"></i>
             </span>
             <span>${event.error.message}</span>
         `;
@@ -62,7 +60,7 @@ form.addEventListener('submit', function(ev) {
             var errorDiv = document.getElementById('card-errors');
             var html = `
                 <span class="icon" role="alert">
-                <i class="fa fa-times"></i>
+                <i class="fas fa-times"></i>
                 </span>
                 <span>${result.error.message}</span>`;
             $(errorDiv).html(html);
