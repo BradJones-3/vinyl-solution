@@ -58,8 +58,8 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('view_bag'))
 
-            request.session['save_info'] = 'save_info' in request.POST
-            return redirect(reverse('checkout_success', args=[oder.order_number]))
+            request.session['save_info'] = 'save-info' in request.POST
+            return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
@@ -78,7 +78,7 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-
+        order_form = OrderForm()
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
@@ -98,7 +98,7 @@ def checkout_success(request, order_number):
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f'Order successfully processed! \
-        Your order number is {order_number} A confirmation \
+        Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')
 
     if 'bag' in request.session:
@@ -108,5 +108,5 @@ def checkout_success(request, order_number):
     context = {
         'order': order,
     }
-    
+
     return render(request, template, context)
