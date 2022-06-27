@@ -1,0 +1,22 @@
+Hello {{ order.full_name }}
+
+This is a Confirmation eof you order at Vinyl Solution. Your Order information is:
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.order_date }}
+
+Order Total: £{{ order.order_total }}
+Delivery: £{{ order.delivery_cost }}
+Grand Total: £{{ order.grand_total }}
+
+Your order will be shipped to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.county }}.
+
+We have your phone number on file as {{ order.phone_number }}.
+
+If you have and questions, feel free to contact us at {{ contact_email }}.
+
+Thank you for your order!
+
+Keep Grooving!
+
+Vinyl Solution
