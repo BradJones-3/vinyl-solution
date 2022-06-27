@@ -2,3 +2,22 @@
     color: #F39C12;
     font-weight: bold;
 }
+
+#id_default_country,
+#id_default_country option:not(:first-child) {
+    background-color: #F39C12;
+    color: #777;
+    border-color: #000000;
+    font-weight: bold;
+}
+
+.profile-button {
+    color: #000000;
+    background-color: #F39C12;
+}
+
+.profile-button:hover {
+    color: #F39C12;
+    border: 1px solid #F39C12;
+    background-color: #000000;
+}
