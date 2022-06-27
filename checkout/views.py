@@ -48,6 +48,7 @@ def checkout(request):
             'street_address2': request.POST['street_address2'],
             'county': request.POST['county'],
         }
+
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save(commit=False)
@@ -76,12 +77,13 @@ def checkout(request):
                             order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your bag was not found in out database. "
-                        "Please email us for assistance!")
+                        "One of the products in your bag wasn't found in our database. "
+                        "Please call us for assistance!")
                     )
                     order.delete()
                     return redirect(reverse('view_bag'))
 
+            # Save the info to the user's profile if all is well
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
@@ -90,7 +92,7 @@ def checkout(request):
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "HELP! I Need Some Items! Your Bag Is Empty")
+            messages.error(request, "There's nothing in your bag at the moment")
             return redirect(reverse('products'))
 
         current_bag = bag_contents(request)
@@ -102,9 +104,10 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
+        # Attempt to prefill the form with any info the user maintains in their profile
         if request.user.is_authenticated:
             try:
-                profile=UserProfile.objects.get(user=request.user)
+                profile = UserProfile.objects.get(user=request.user)
                 order_form = OrderForm(initial={
                     'full_name': profile.user.get_full_name(),
                     'email': profile.user.email,
@@ -121,11 +124,10 @@ def checkout(request):
         else:
             order_form = OrderForm()
 
-        order_form = OrderForm()
-
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
-            Did you set it in your enviroment?')
+            Did you forget to set it in your environment?')
+
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
@@ -137,7 +139,9 @@ def checkout(request):
 
 
 def checkout_success(request, order_number):
-    """ Handles successful checkouts"""
+    """
+    Handle successful checkouts
+    """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
 
