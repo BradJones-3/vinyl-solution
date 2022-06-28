@@ -2,7 +2,7 @@ from django import forms
 from .models import Product, Category
 
 
-calss ProductForm(forms.ModelForm):
+class ProductForm(forms.ModelForm):
 
     class Meta:
         model = Product
@@ -15,4 +15,4 @@ calss ProductForm(forms.ModelForm):
 
         self.fields['category'].choices = friendly_names
         for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = ['border-black rounded-0']
+            field.widget.attrs['class'] = 'border-black rounded-0'
