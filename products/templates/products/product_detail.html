@@ -32,7 +32,12 @@
                     <p class="lead mb-0 ml-3 text-left font-weight-bold">£{{ product.price }}</p>
                     <p class="mt-3 ml-3 font-weight-bold">{{ product.description }}</p>
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
-
+                    {% if request.user.is_superuser %}
+                        <small class="ml-3">
+                            <a href="{% url 'edit_product' product.id %}" class="font-weight-bold">Edit</a>
+                            <a href="{% url 'delete_product' product.id %}" class="text-danger font-weight-bold">Delete</a>
+                        </small>
+                    {% endif %}
                         {% csrf_token %}
                         <div class="form-row">
                             {% with product.has_sizes as s %}
