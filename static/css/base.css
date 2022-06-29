@@ -372,6 +372,25 @@ span.badge:hover {
 .arrow-dark {
     border-bottom-color: #343a40 !important;
 }
+
+/* crispy form */
+
+#id_category {
+    background-color: #F39C12;
+    font-weight: bold;
+}
+
+#id_description {
+    background-color: #F39C12;
+    font-weight: bold;
+}
+
+#id_has_sizes {
+    background-color: #F39C12;
+    font-weight: bold;
+}
+
+
 /* Media Queries */
 
 /* taken from code institute to fix the navbar to top on medium and up screens */
