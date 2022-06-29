@@ -373,10 +373,11 @@ span.badge:hover {
     border-bottom-color: #343a40 !important;
 }
 
-/* crispy form */
+/* Product form */
 
 #id_category {
     background-color: #F39C12;
+    color: #000000;
     font-weight: bold;
 }
 
@@ -387,9 +388,35 @@ span.badge:hover {
 
 #id_has_sizes {
     background-color: #F39C12;
+    color: #000000;
     font-weight: bold;
 }
 
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-checkbox .custom-control-label::before {
+    border-radius: 0;
+    border-color: red;
+}
+
+.custom-checkbox .custom-control-input:checked~custom-control-label::before {
+    background-color: red;
+    color: red;
+    border-radius: 0;
+}
 
 /* Media Queries */
 
