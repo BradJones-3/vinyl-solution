@@ -1,1 +1,1 @@
-web: gunicorn vinyl-solution.wsgi:application
+web: gunicorn vinyl_solution.wsgi:application
