@@ -72,7 +72,6 @@ User can see any orders they have places | click on the order number and see the
 When on the previous orders page click the back to profile button | Takes them back to the Profile page | Yes
 
 
-
 ### Automated Testing
 
 #### All individual CSS files have been tested through [W3C CSS validator](https://jigsaw.w3.org/css-validator/).
@@ -91,3 +90,17 @@ When on the previous orders page click the back to profile button | Takes them b
 
 #### Checkouts JS Script Test
  ![Picture of stripe-elements.js](media/testing_images/checkout-js.png)
+
+
+### Lighthouse Testing
+
+#### Homepage Lighthouse
+ ![Picture of lighthouse test on homepage](media/lighthouse-test/home-lighthouse.png)
+#### Product Lighthouse 
+ ![Picture of lighthouse test on Products page](media/lighthouse-test/products-lighthouse.png)
+#### Individual Product Lighthouse
+ ![Picture of lighthouse test on individual product](media/lighthouse-test/one-product-lighthouse.png)
+#### Add Product Lighthouse
+ ![Picture of lighthouse test on Add Product page](media/lighthouse-test/product-add-lighthouse.png)
+#### Bag Lighthouse
+ ![Picture of lighthouse test on Users Bag page](media/lighthouse-test/bag-lighthouse.png)
