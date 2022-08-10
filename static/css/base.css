@@ -161,9 +161,9 @@ span.badge:hover {
     display: none;
 }
 
-.allauth-form-inner-content input::placeholder, 
-.allauth-form-inner-content input::active,
-.allauth-form-inner-content input::focus {
+.allauth-form-inner-content input::placeholder,
+.allauth-form-inner-content input:active,
+.allauth-form-inner-content input:focus {
     color: #F39C12;
 }
 
