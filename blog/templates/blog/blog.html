@@ -28,9 +28,9 @@
                     <div class="card-body">
                         <a href="">
                             {% if blogpost.image %}
-                                <img src="{{ blogpost.image.url }}" alt="{{ blogpost.blog_title }}" class="img-fluid" id="blog-img">
+                                <img src="{{ blogpost.image.url }}" alt="{{ blogpost.blog_title }}" class="img-fluid">
                             {% else %}
-                                <img src="{{ MEDIA_URL }}noimage.png" alt="{{ blogpost.blog_title }}" class="img-fluid" id="blog-url">
+                                <img src="{{ MEDIA_URL }}noimage.png" alt="{{ blogpost.blog_title }}" class="img-fluid">
                             {% endif %}
                             <!-- Blog Title -->
                             <h4 class="mx-2 my-2">{{ blogpost.blog_title }}</h4>

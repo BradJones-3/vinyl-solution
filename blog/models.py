@@ -10,6 +10,7 @@ class Post(models.Model):
         User, on_delete=models.CASCADE, null=True, blank=True)
     date_created = models.DateTimeField(
         auto_now_add=True, null=True)
+    blog_preview = models.CharField(max_length=254, null=True, blank=True)
     blog_body = models.TextField()
     blog_image = models.ImageField(null=True, blank=True)
 
