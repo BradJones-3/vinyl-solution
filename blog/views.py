@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from .models import Post
+from .models import BlogPost
 
 
 def blog(request):
     """ Displays All Blog Posts """
 
-    blogposts = Post.objects.all()
+    blogposts = BlogPost.objects.all()
 
     context = {
         'blogposts': blogposts,

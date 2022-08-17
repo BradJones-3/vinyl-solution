@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class Post(models.Model):
+class BlogPost(models.Model):
     """ Create's A Blog Entry In The Database """
 
     blog_title = models.CharField(max_length=80, null=True, blank=False)

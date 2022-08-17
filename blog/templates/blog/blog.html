@@ -23,10 +23,9 @@
     <!-- Blog Posts -->
     <div class="row">
         {% for blogpost in blogposts %}
-            <div class="col-12 col-md-6 mb-4">
+            <div class="col-12 col-md-6 mb-4 mt-4">
                 <div class="text-center">
                     <div class="card-body">
-                        <a href="">
                             {% if blogpost.image %}
                                 <img src="{{ blogpost.image.url }}" alt="{{ blogpost.blog_title }}" class="img-fluid">
                             {% else %}
@@ -35,10 +34,9 @@
                             <!-- Blog Title -->
                             <h4 class="mx-2 my-2">{{ blogpost.blog_title }}</h4>
                             <!-- Blog Preview -->
-                            <p class="pt-2 font-weight-bold">{{ blogpost.blog_preview }}</p>
+                            <p class="blog-text">{{blogpost.blog_body|slice:":200" }}...</p>
                             <!-- Author Of Post -->
                             <small class="px-2 text-black font-weight-bold">Posted By: {{ blogpost.author }} <span class="date"> on: {{ blogpost.date_created }}</span></small>
-                        </a>
                     </div>
                 </div>
                 <!-- Button to Go to the full post-->

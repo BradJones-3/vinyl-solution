@@ -211,6 +211,12 @@ span.badge:hover {
     border: 1px solid #f39C12;
 }
 
+/* Blog */
+
+.blog-text {
+    color: #000000 !important;
+}
+
 /* Buttons/Icons */
 
 /* Taken from code institute tutorials which was taken from Bulma */
