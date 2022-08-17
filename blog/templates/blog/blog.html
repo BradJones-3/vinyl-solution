@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container mt-3">
+
+
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h2 class="logo-font font-weight-bold">All Blog Posts</h2>
+            <hr class="w-50 mb-1 break">
+        </div>
+    </div>
+
+    <!-- Blog Posts -->
+    <div class="row">
+        {% for blogpost in blogposts %}
+            <div class="col-12 col-md-6 mb-4">
+                <div class="text-center">
+                    <div class="card-body">
+                        <a href="">
+                            {% if blogpost.image %}
+                                <img src="{{ blogpost.image.url }}" alt="{{ blogpost.blog_title }}" class="img-fluid" id="blog-img">
+                            {% else %}
+                                <img src="{{ MEDIA_URL }}noimage.png" alt="{{ blogpost.blog_title }}" class="img-fluid" id="blog-url">
+                            {% endif %}
+                            <!-- Blog Title -->
+                            <h4 class="mx-2 my-2">{{ blogpost.blog_title }}</h4>
+                            <!-- Blog Preview -->
+                            <p class="pt-2 font-weight-bold">{{ blogpost.blog_preview }}</p>
+                            <!-- Author Of Post -->
+                            <small class="px-2 text-black font-weight-bold">Posted By: {{ blogpost.author }} <span class="date"> on: {{ blogpost.date_created }}</span></small>
+                        </a>
+                    </div>
+                </div>
+                <!-- Button to Go to the full post-->
+                <div class="text-center mt-4 mb-3">
+                    <a href="" class="shopping-button btn btn-lg rounded-0 text-uppercase">Read Full Post</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
