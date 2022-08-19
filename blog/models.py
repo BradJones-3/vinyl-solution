@@ -19,3 +19,16 @@ class BlogPost(models.Model):
 
     def __str__(self):
         return self.blog_title
+
+
+class BlogComment(models.Model):
+    """ Create blog comment model to database """
+
+    blogpost = models.ForeignKey(BlogPost, on_delete=models.CASCADE, related_name='comments')
+    comment_user = models.ForeignKey(User, on_delete=models.CASCADE)
+    comment_date = models.DateField(auto_now_add=True)
+    comment_title = models.CharField(max_length=50, null=False, blank=False)
+    comment = models.TextField(max_length=200, null=False, blank=False)
+
+    def __str__(self):
+        return self.comment_title
