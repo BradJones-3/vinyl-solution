@@ -33,7 +33,7 @@
             {% if request.user == blogpost.author or request.user.is_superuser %}
             <small>
                 <a href="#" class="font-weight-bold">Edit</a><!-- button to edit the blog post -->
-                <a href="#" class="text-danger font-weight-bold" data-toggle="modal" data-target="#deleteBlogPost-{{ blogpost.id }}">Delete</a><!-- Button to delete blog post -->
+                <a href="#" class="text-danger font-weight-bold ml-3" data-toggle="modal" data-target="#deleteBlogPost-{{ blogpost.id }}">Delete</a><!-- Button to delete blog post -->
             </small>
             {% endif %}
         </div>
