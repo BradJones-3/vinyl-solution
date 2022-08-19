@@ -27,9 +27,11 @@
                 <div class="text-center">
                     <div class="card-body">
                             {% if blogpost.image %}
+                            <a href="{% url 'blog_detail' blogpost.id %}">
                                 <img src="{{ blogpost.image.url }}" alt="{{ blogpost.blog_title }}" class="img-fluid">
                             {% else %}
                                 <img src="{{ MEDIA_URL }}noimage.png" alt="{{ blogpost.blog_title }}" class="img-fluid">
+                            </a>
                             {% endif %}
                             <!-- Blog Title -->
                             <h4 class="mx-2 my-2">{{ blogpost.blog_title }}</h4>
@@ -41,7 +43,7 @@
                 </div>
                 <!-- Button to Go to the full post-->
                 <div class="text-center mt-4 mb-3">
-                    <a href="" class="shopping-button btn btn-lg rounded-0 text-uppercase">Read Full Post</a>
+                    <a href="{% url 'blog_detail' blogpost.id %}" class="shopping-button btn btn-lg rounded-0 text-uppercase">Read Full Post</a>
                 </div>
             </div>
         {% endfor %}
