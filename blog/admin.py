@@ -10,4 +10,17 @@ class PostAdmin(admin.ModelAdmin):
                     'date_created')
 
 
+
+class BlogCommentAdmin(admin.ModelAdmin):
+    """ Creates the admin interface for Blog Comment """
+
+    list_display = (
+        'comment_title',
+        'comment',
+        'blogpost',
+        'comment_user',
+    )
+
+
 admin.site.register(BlogPost, PostAdmin)
+admin.site.register(BlogComment, BlogCommentAdmin)
