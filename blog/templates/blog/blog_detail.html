@@ -7,9 +7,9 @@
 
 <div class="container header-container">
     <div class="row">
-        <div class="col">
-            <h2 class="page-header">{{ blogpost.blog_title }}</h2>
-            <p class="mb-0 text-black pb-3"> By: {{ blogpost.author }} | {{ blogpost.date_created }}</p>
+        <div class="col mt-5 page-header">
+            <h2 class="text-center">{{ blogpost.blog_title }}</h2>
+            <p class="mb-0 pb-3 text-center"> By: {{ blogpost.author }} | {{ blogpost.date_created }}</p>
         </div>
     </div>
 </div>
@@ -20,7 +20,7 @@
 
 <!-- Post -->
 
-<div class="container text-center">
+<div class="container text-center page-header">
     <div class="col-12 p-0">
         <div>
             {% if blogpost.image %}
@@ -39,7 +39,7 @@
         </div>
     </div>
     <div class="col-12 p-0 pb-4">
-        <p class="mb-0 p-0">{{ blogpost.blog.body }}</p>
+        <p class="mb-0 p-0">{{ blogpost.blog_body }}</p>
     </div>
 </div>
     

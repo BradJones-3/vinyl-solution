@@ -217,6 +217,10 @@ span.badge:hover {
     color: #000000 !important;
 }
 
+.page-header {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
 /* Buttons/Icons */
 
 /* Taken from code institute tutorials which was taken from Bulma */
