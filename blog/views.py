@@ -17,9 +17,9 @@ def blog(request):
 
 def blog_detail(request, blogpost_id):
     """ A view to display blog detail page """
-    
+
     blogpost = get_object_or_404(BlogPost, pk=blogpost_id)
-    blog_comments = BlogComment.objects.filter(blogpost=blogpost)
+    blogcomments = BlogComment.objects.filter(blogpost=blogpost)
 
     context = {
         'blogpost': blogpost,
