@@ -221,6 +221,12 @@ span.badge:hover {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
+#id_comment {
+    background-color: #F39C12;
+    font-weight: bold;
+    border: 3px solid #000000;
+}
+
 /* Buttons/Icons */
 
 /* Taken from code institute tutorials which was taken from Bulma */

@@ -68,9 +68,41 @@
 </div>
 
 
+<!-- Comment Section -->
+<div class="container pt-5 mb-5 shadow">
+    <div class="row">
+        <div class="col-12 pb-3 page-header">
+            <div>Comments</div>
+            {% if blogcomments.count > 0 %}
+            <p>{{ blogcomments.count }} comment</p>
+            <hr>
+            {% else %}
+                <p>There are no comments yet! Why not be the first?</p>
+            {% endif %}
+            {% if not request.user.is_authenticated %}
+                <p>You need to be logged in to leave a comment! <a href="{% url 'account_login' %}">Log In</a> or Register for an account <a href="{% url 'account_signup' %}">here</a></p>
+            {% else %}
+                <a href="{% url 'add_blogcomment' blogpost.id %}" class="btn btn-black font-weight-bold">Add a comment</a>
+            {% endif %}
+        </div>
+
+        <div class="col-12 pt-4">
+            {% for blogcomment in blogcomments %}
+                <h4 class="page-header">{{ blogcomment.comment_title }}</h4>
+                <small class="text-black">By {{ blogcomment.comment_user }} on {{ blogcomment.comment_date }}</small>
+                <p class="blog-comment">{{ blogcomment.comment }}</p>
+                {% if request.user == blogpost.author or request.user.is_superuser %}
+                    <a href="" class="btn-btn-black-font-weight-bold"><i class="fas fa-trash-o"></i></a><!-- Delete Button -->
+                    <a href="" class="btn-btn-black-font-weight-bold"><i class="fas fa-pencil-square"></i></a><!-- Edit Button -->
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
 
 {% endblock %}
 
 {% block postloadjs %}
-    {{block.super }}
+{{block.super }}
 {% endblock %}
