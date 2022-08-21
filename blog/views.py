@@ -91,3 +91,21 @@ def add_blogcomment(request, blogpost_id):
     }
 
     return render(request, template, context)
+
+
+
+@login_required
+def delete_blogpost(request, blogpost_id):
+    """ Deletes Blog Post from Database """
+
+    blogpost = get_object_or_404(BlogPost, pk=blogpost_id)
+
+    if request.user == blogpost.author or request.user.is_superuser:
+        blogpost.delete()
+        messages.info(request, "Blog Post Has Successfully Been Deleted")
+        return redirect(reverse('blog'))
+    else:
+        messages.error(
+            request, "Sorry You Didn't Create This Post \
+                So You Are Not Authorised To Delete It.")
+        return redirect(reverse('blog'))

@@ -33,7 +33,7 @@
             {% if request.user == blogpost.author or request.user.is_superuser %}
             <small>
                 <a href="#" class="font-weight-bold btn btn-black">Edit</a><!-- button to edit the blog post -->
-                <button type="button" class="btn btn-black text-danger font-weight-bold ml-3" data-toggle="modal" data-target="#deleteBlogPost">Delete</button><!-- Button to delete blog post -->
+                <button href="{% url 'delete_blogpost' blogpost.id %}" class="btn btn-black text-danger font-weight-bold ml-3" data-toggle="modal" data-target="#deleteBlogPost">Delete</button><!-- Button to delete blog post -->
             </small>
             {% endif %}
         </div>
@@ -61,7 +61,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-black font-weight-bold" data-dismiss="modal">Close</button>
-                <a href="#" class="btn btn-black font-weight-bold">Delete</a> <!-- Insert delete blogpost link when complete-->
+                <a href="{% url 'delete_blogpost' blogpost.id %}" class="btn btn-black font-weight-bold">Delete</a> <!-- Insert delete blogpost link when complete-->
             </div>
         </div>
     </div>
@@ -89,7 +89,7 @@
         <div class="col-12 mt-4 page-header">
             {% for blogcomment in blogcomments %}
                 <h4 class="font-weight-bold">{{ blogcomment.comment_title }}</h4>
-                <small class="text-black font-weight-bold">By {{ blogcomment.comment_user }} on {{ blogcomment.comment_date }}</small>
+                <small class="font-weight-bold">By {{ blogcomment.comment_user }} on {{ blogcomment.comment_date }}</small>
                 <p class="blog-comment">{{ blogcomment.comment }}</p>
                 {% if request.user == blogpost.author or request.user.is_superuser %}
                     <a href="" class="btn-btn-black-font-weight-bold"><i class="fas fa-trash-o"></i></a><!-- Delete Button -->
