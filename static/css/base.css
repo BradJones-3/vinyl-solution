@@ -221,7 +221,8 @@ span.badge:hover {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-#id_comment {
+#id_comment,
+#id_blog_body {
     background-color: #F39C12;
     font-weight: bold;
     border: 3px solid #000000;

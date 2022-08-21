@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block page_header %}
+
+<div class="container header-container">
+    <div class="row">
+        <div class="col mt-5 page-header">
+            <h2 class="text-center font-weight-bold ">Add A New Blog Post</h2>
+            <hr>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <form method="POST" action="{% url 'add_blogpost' %}" class="form mb-2" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <div class="text-right">
+                    <a class="btn btn-black" href="{% url 'blog' %}">Cancel</a>
+                    <button class="btn btn-black" type="submit">Create New Post</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script>
+    $("#new-image").change(function () {
+        var file = $("#new-image")[0].files[0];
+        $("#filename").text(`Image will now be set to: ${file.name}`);
+    });
+</script>
+{% endblock %}

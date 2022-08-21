@@ -71,7 +71,7 @@
 <!-- Comment Section -->
 <div class="container pt-5 mb-5 shadow">
     <div class="row">
-        <div class="col-12 pb-3 page-header">
+        <div class="col-12 pb-3 page-header font-weight-bold">
             <div>Comments</div>
             {% if blogcomments.count > 0 %}
             <p>{{ blogcomments.count }} comment</p>
@@ -86,10 +86,10 @@
             {% endif %}
         </div>
 
-        <div class="col-12 pt-4">
+        <div class="col-12 mt-4 page-header">
             {% for blogcomment in blogcomments %}
-                <h4 class="page-header">{{ blogcomment.comment_title }}</h4>
-                <small class="text-black">By {{ blogcomment.comment_user }} on {{ blogcomment.comment_date }}</small>
+                <h4 class="font-weight-bold">{{ blogcomment.comment_title }}</h4>
+                <small class="text-black font-weight-bold">By {{ blogcomment.comment_user }} on {{ blogcomment.comment_date }}</small>
                 <p class="blog-comment">{{ blogcomment.comment }}</p>
                 {% if request.user == blogpost.author or request.user.is_superuser %}
                     <a href="" class="btn-btn-black-font-weight-bold"><i class="fas fa-trash-o"></i></a><!-- Delete Button -->

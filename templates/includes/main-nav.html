@@ -39,6 +39,9 @@
                 Blog
             </a>
             <div class="dropdown-menu border-0 bg-custom" aria-labelledby="blog-link">
+                {% if user.is_authenticated %}
+                <a href="{% url 'add_blogpost' %}" class="dropdown-item font-weight-bold">Create Blog Post</a>
+                {% endif %}
                 <a href="{% url 'blog' %}" class="dropdown-item font-weight-bold">Vinyl Solution Blog</a> 
             </div>
         </li>
