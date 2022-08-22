@@ -72,6 +72,38 @@ User can see any orders they have places | click on the order number and see the
 When on the previous orders page click the back to profile button | Takes them back to the Profile page | Yes
 
 
+#### Blog Page
+Action | Expected outcome| Functional
+-------|-----------------|----------|
+User goes to Blog page | Can see all Blog Posts | Yes
+User clicks on 'Read Full Post' | User is taken to the Post page | Yes
+Author can edit post | Clicks on the edit button and taken to form | Yes
+Author can delete post | clicks on delete button and modal appears | Yes
+
+#### Blog Detail Page
+Action | Expected outcome| Functional
+-------|-----------------|----------|
+Loads all data about clicked post | Can see image, title, author, date created on, full content of post | Yes
+Can see any comments left by other users | Can see all commments made by other users | Yes
+Logged in User Wants to add comment | Can easily locate 'Add Comment' button | Yes
+Unregistered User wants to add comment | Is told they need to log in or register | Yes
+Registered Users want to edit comment | Users can find the edit button and be taken to form | Yes
+Registered Users want to remove comment | Users can find delete button and be met with a modal | Yes
+
+#### Add Blog Post Page
+Action | Expected outcome| Functional
+-------|-----------------|----------|
+Signed In User clicks Add Blog Post | Is taken to a Add Post form | Yes
+Clicks Add Blog after filling in Form | Is taken to post that was just created | Yes
+All required fields aren't filled in correctly | Message appears instructing users they need to fill in required area | Yes
+
+#### Edit Blog Post Page
+Action | Expected outcome| Functional
+-------|-----------------|----------|
+Author and Superuser click edit button | They are taken to the blogs form which they can edit | Yes
+Correctly Fill out edited form | clicks submit button and are taken to the new updated post | Yes
+Clicked cancel button when editing | Are taken back to all Blog Posts | Yes
+
 ### Automated Testing
 
 #### All individual CSS files have been tested through [W3C CSS validator](https://jigsaw.w3.org/css-validator/).
