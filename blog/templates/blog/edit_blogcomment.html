@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col mt-5 page-header">
+            <h2 class="text-center font-weight-bold ">Edit Blog Comment</h2>
+            <hr>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <form action="{% url 'edit_blogcomment' comment.id %}" enctype="multipart/form-data">
+                <div class="form-group font-weight-bold">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                </div>
+                <div class="form-group">
+                    <a href="{% url 'blog' %}" class="btn btn-black font-weight-bold">Cancel</a>
+                    <button class="btn btn-black font-weight-bold ml-3">Submit Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+{% endblock %}

@@ -69,35 +69,80 @@
 </div>
 
 
-<!-- Comment Section -->
-<div class="container pt-5 mb-5 shadow">
-    <div class="row">
-        <div class="col-12 pb-3 page-header font-weight-bold">
-            <div>Comments</div>
-            {% if blogcomments.count > 0 %}
-            <p>{{ blogcomments.count }} comment</p>
-            <hr>
-            {% else %}
-                <p>There are no comments yet! Why not be the first?</p>
-            {% endif %}
-            {% if not request.user.is_authenticated %}
-                <p>You need to be logged in to leave a comment! <a href="{% url 'account_login' %}">Log In</a> or Register for an account <a href="{% url 'account_signup' %}">here</a></p>
-            {% else %}
-                <a href="{% url 'add_blogcomment' blogpost.id %}" class="btn btn-black font-weight-bold">Add a comment</a>
-            {% endif %}
-        </div>
+    <!-- Comment Section -->
 
-        <div class="col-12 mt-4 page-header">
-            {% for blogcomment in blogcomments %}
-                <h4 class="font-weight-bold">{{ blogcomment.comment_title }}</h4>
-                <small class="font-weight-bold">By {{ blogcomment.comment_user }} on {{ blogcomment.comment_date }}</small>
-                <p class="font-weight-bold">{{ blogcomment.comment }}</p>
-                {% if request.user == blogpost.author or request.user.is_superuser %}
-                    <a href="" class="btn-btn-black-font-weight-bold"><i class="fas fa-trash-o"></i></a><!-- Delete Button -->
-                    <a href="" class="btn-btn-black-font-weight-bold"><i class="fas fa-pencil-square"></i></a><!-- Edit Button -->
-                {% endif %}
-            {% endfor %}
+    <div class="container page-header mt-4">
+        <div class="col-sm-12">
+            <div class="rounded clearfix">
+                <h3 class="mb-4">Comments</h3>
+                <div class="row align-items-start">
+                    <div class="col-sm-12">
+                        {% if blogpost.comments.count > 0 %}
+                            <h3><strong>{{ blogpost.comment.count }}</strong></h3>
+                        {% else %}
+                            <p>There are no comments yet! Why not be the first?</p>
+                        {% endif %}
+                        {% if not request.user.is_authenticated %}
+                            <p>You need to be logged in to leave a comment! <a href="{% url 'account_login' %}">Log In</a> or Register for an account <a href="{% url 'account_signup' %}">here</a></p>
+                        {% else %}
+                            <a href="{% url 'add_blogcomment' blogpost.id %}" class="btn btn-black font-weight-bold">Add a comment</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="rounded p-3 mb-3">
+                <div class="p-3 mb-3">
+                    {% if blogpost.comments.count > 0 %}
+                    {% for comment in blogpost.comments.all %}
+                    <div class="row align-items-start mt-3">
+                        <div class="col-4">
+                            <div class="mb-1"><small>{{ comment.comment_user }}</small></div>
+                            <p><small>{{ comment.comment_date }}</small></p>
+                        </div>
+                        <div class="col-8 pl-3">
+                            <h3 class="mb-3">
+                                <small>{{ comment.comment_title }}</small>
+                            </h3>
+                            <div>
+                                <p><small>{{ comment.comment }}</small></p>
+                            </div>
+                            {% if request.user.is_authenticated or request.user.is_superuser %}
+                            <div>
+                                <button type="button" class="btn btn-sm btn-black font-weight-bold" data-toggle="modal" data-target="#deleteComment-{{ comment.id }}">Delete Comment</button>
+                                <a href="{% url 'edit_blogcomment' comment.id %}" class="btn btn-sm btn-black font-weight-bold">Edit Comment</a>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <!-- Modal To Delete Comment -->
+                    <div class="modal fade" id="deleteComment-{{ comment.id }}" tabindex="-1" aria-labelledby="deleteCLabel-{{ comment.id }}" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div class="modal-title font-weight-bold" id="deleteCLabel-{{ comment.id }}">Do You Want To Delete Your Comment?</div>
+                                    <button type="button" class="close" data-dismiss="modal" aria-labelledby="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p class="font-weight-bold">Are You Sure You Want To Delete This Comment? This Action Cannot Be Reversed!</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-black" data-dismiss="modal">Cancel</button>
+                                    <a href="{% url 'delete_blogcomment' comment.id %}" class="btn btn-danger ml-3">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <p class="font-weight-bold">No Comments Yet</p>
+                    {% endif %}
+                </div>
+            </div>
         </div>
+    </div>
     </div>
 </div>
 

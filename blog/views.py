@@ -148,7 +148,39 @@ def add_blogcomment(request, blogpost_id):
 
 @login_required
 def edit_blogcomment(request, comment_id):
-    """ Allows Author and Admin to edit comments """
+    """ Allows Author and Admin to Edit Comments """
+
+    comment = get_object_or_404(BlogComment, pk=comment_id)
+    blogpost = get_object_or_404(BlogPost, pk=comment.blogpost.id)
+    if request.user == comment.comment_user or request.user.is_superuser:
+        if request.method == 'POST':
+            form = CommentForm(request.POST, instance=comment)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Comment Has Been Updated!')
+                return redirect(reverse('blog'))
+            else:
+                messages.error(request, 'Failed To Update Your Comment Please \
+                    Make Sure The Form Is Valid!')
+        else:
+            form = CommentForm(instance=comment)
+        template = 'blog/edit_blogcomment.html'
+        context = {
+            'form': form,
+            'comment': comment,
+            'blogpost': blogpost,
+        }
+
+        return render(request, template, context)
+    else:
+        messages.error(request, "You're not Authorised To Do That!")
+        return redirect(reverse('blog'))
+
+
+
+@login_required
+def delete_blogcomment(request, comment_id):
+    """ Allows Author and Admin to delete comments """
 
     comment = get_object_or_404(BlogComment, pk=comment_id)
 
