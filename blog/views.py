@@ -112,18 +112,7 @@ def edit_blogpost(request, blogpost_id):
     return render(request, template, context)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+# Blog Comments 
 
 @login_required
 def add_blogcomment(request, blogpost_id):
@@ -157,4 +146,16 @@ def add_blogcomment(request, blogpost_id):
     return render(request, template, context)
 
 
+@login_required
+def edit_blogcomment(request, comment_id):
+    """ Allows Author and Admin to edit comments """
 
+    comment = get_object_or_404(BlogComment, pk=comment_id)
+
+    if request.user == comment.comment_user or request.user.is_superuser:
+        comment.delete()
+        messages.success(request, 'Comment Has Successfully Been Deleted!')
+        return redirect(reverse('blog'))
+    else:
+        messages.error(request, 'You Are Not Authorised To Do That!')
+        return redirect(reverse('blog'))

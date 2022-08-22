@@ -21,7 +21,8 @@
 <!-- Post -->
 
 <div class="container text-center page-header">
-    <div class="col-12 p-0">
+    <div class="row"></div>
+    <div class="col-12">
         <div>
             {% if blogpost.image %}
                 <img src="{{ blogpost.image.url }}" alt="{{ blogpost.blog_title }}" class="img-fluid">
@@ -39,7 +40,7 @@
         </div>
     </div>
     <div class="col-12 p-0 pb-4">
-        <p class="mb-0 p-0">{{ blogpost.blog_body }}</p>
+        <p class="mb-0 p-0 font-weight-bold">{{ blogpost.blog_body }}</p>
     </div>
 </div>
     
@@ -90,7 +91,7 @@
             {% for blogcomment in blogcomments %}
                 <h4 class="font-weight-bold">{{ blogcomment.comment_title }}</h4>
                 <small class="font-weight-bold">By {{ blogcomment.comment_user }} on {{ blogcomment.comment_date }}</small>
-                <p class="blog-comment">{{ blogcomment.comment }}</p>
+                <p class="font-weight-bold">{{ blogcomment.comment }}</p>
                 {% if request.user == blogpost.author or request.user.is_superuser %}
                     <a href="" class="btn-btn-black-font-weight-bold"><i class="fas fa-trash-o"></i></a><!-- Delete Button -->
                     <a href="" class="btn-btn-black-font-weight-bold"><i class="fas fa-pencil-square"></i></a><!-- Edit Button -->
