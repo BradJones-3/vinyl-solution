@@ -129,3 +129,9 @@ For the testing section please refer to [TESTING.md](TESTING.md) file.
 9. In "Manual Deployment" click "Deploy Branch".
 10. You should get the message "Your app is successfully deployed".
 11. Click "View" to lunch the app.
+
+
+### Credits
+- [Django Central](https://djangocentral.com/building-a-blog-application-with-django/) was used to help build the Blog app and comment section.
+- Boutique Ado Code Institute project for help with the bag, checkout, products, profile apps, Stripe Payments and some CSS styling.
+- [Django Documentation](https://docs.djangoproject.com/en/3.2/) was used throughout the project to better understand the creation of a django app.
