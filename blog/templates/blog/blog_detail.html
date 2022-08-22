@@ -32,7 +32,7 @@
         <div class="py-3">
             {% if request.user == blogpost.author or request.user.is_superuser %}
             <small>
-                <a href="#" class="font-weight-bold btn btn-black">Edit</a><!-- button to edit the blog post -->
+                <a href="{% url 'edit_blogpost' blogpost.id %}" class="font-weight-bold btn btn-black">Edit</a><!-- button to edit the blog post -->
                 <button href="{% url 'delete_blogpost' blogpost.id %}" class="btn btn-black text-danger font-weight-bold ml-3" data-toggle="modal" data-target="#deleteBlogPost">Delete</button><!-- Button to delete blog post -->
             </small>
             {% endif %}

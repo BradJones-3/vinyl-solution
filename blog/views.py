@@ -61,6 +61,70 @@ def blog_detail(request, blogpost_id):
     return render(request, 'blog/blog_detail.html', context)
 
 
+
+
+@login_required
+def delete_blogpost(request, blogpost_id):
+    """ Deletes Blog Post from Database """
+
+    blogpost = get_object_or_404(BlogPost, pk=blogpost_id)
+
+    if request.user == blogpost.author or request.user.is_superuser:
+        blogpost.delete()
+        messages.info(request, "Blog Post Has Successfully Been Deleted")
+        return redirect(reverse('blog'))
+    else:
+        messages.error(
+            request, "Sorry You Didn't Create This Post \
+                So You Are Not Authorised To Delete It.")
+        return redirect(reverse('blog'))
+
+
+@login_required
+def edit_blogpost(request, blogpost_id):
+    """ Allows the creator or superuser to edit A Blogpost """
+
+    blogpost = get_object_or_404(BlogPost, pk=blogpost_id)
+
+    if request.user == blogpost.author or request.user.is_superuser:
+        if request.method == 'POST':
+            form = BlogForm(request.POST, request.FILES, instance=blogpost)
+            if form.is_valid():
+                form.save()
+                messages.info(request, 'Successfully Edited Blog Post!')
+                return redirect(reverse('blog_detail', args=[blogpost.id]))
+            else:
+                messages.error(request, 'Blog Post Failed To Update \
+                    Please Make Sure The Form Is Valid.')
+        else:
+            form = BlogForm(instance=blogpost)
+    else:
+        messages.error(request, 'Only The Author And \
+            Admin Can Edit This Blog Post')
+        return redirect(reverse('home'))
+
+    template = 'blog/edit_blogpost.html'
+    context = {
+        'form': form,
+        'blogpost': blogpost
+    }
+
+    return render(request, template, context)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @login_required
 def add_blogcomment(request, blogpost_id):
     """ Adds comment and attaches to  post """
@@ -94,18 +158,3 @@ def add_blogcomment(request, blogpost_id):
 
 
 
-@login_required
-def delete_blogpost(request, blogpost_id):
-    """ Deletes Blog Post from Database """
-
-    blogpost = get_object_or_404(BlogPost, pk=blogpost_id)
-
-    if request.user == blogpost.author or request.user.is_superuser:
-        blogpost.delete()
-        messages.info(request, "Blog Post Has Successfully Been Deleted")
-        return redirect(reverse('blog'))
-    else:
-        messages.error(
-            request, "Sorry You Didn't Create This Post \
-                So You Are Not Authorised To Delete It.")
-        return redirect(reverse('blog'))
