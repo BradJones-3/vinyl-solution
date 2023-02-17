@@ -3,9 +3,9 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
 
-from .models import Order, OrderLineItem
 from products.models import Product
 from profiles.models import UserProfile
+from .models import Order, OrderLineItem
 
 import json
 import time
@@ -39,7 +39,7 @@ class StripeWH_Handler:
             content=f'Unhandled webhook recieved: {event["type"]}',
             status=200)
 
-    def handle_payment_intent_succeeded(self, event):
+    def handle_payment_intent_successful(self, event):
         """Handles payment intent succeeded webhook from Stripe"""
         intent = event.data.object
         pid = intent.id
